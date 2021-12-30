@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.ViewHolder> {
@@ -30,7 +32,7 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull WeatherRVAdapter.ViewHolder holder, int position) {
-
+        Picasso.get().load().into(holder.conditionIV);
     }
 
     @Override
@@ -45,7 +47,10 @@ public class WeatherRVAdapter extends RecyclerView.Adapter<WeatherRVAdapter.View
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             windTV = itemView.findViewById(R.id.idTVWindSpeed);
-            
+            temperatureTV = itemView.findViewById(R.id.idTVTemperature);
+            timeTV = itemView.findViewById(R.id.idTVTime);
+            conditionIV = itemView.findViewById(R.id.idTVCondition);
+
         }
     }
 }
